@@ -1,5 +1,5 @@
 Name: mer-sdk-ssu-data
-Version: 0.1.1
+Version: 0.1.2
 Release: 1
 Summary: Mer SDK SSU data
 Summary: ssu vendor configuration data for Mer SDK
@@ -20,7 +20,9 @@ ssu data for Mer SDK
 %{_datadir}/ssu/*.ini
 
 %prep
-%setup -q -n src
+# Adjusting %%setup since git-pkg unpacks to src/
+# %%setup -q -n src
+%setup -q -n src -n src
 
 %build
 echo no build
