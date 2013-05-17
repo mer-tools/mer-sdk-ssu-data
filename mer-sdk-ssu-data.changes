@@ -1,3 +1,6 @@
+* Fri May 2013 David Greaves <david@dgreaves.com> - 0.1.3-1
+- repos: Nemo stores adaptation in /x86 area of hw
+
 * Tue May 2013 David Greaves <david@dgreaves.com> - 0.1.2-1
 - Add nemo-mw-shared since ssu itself is in mw
 
