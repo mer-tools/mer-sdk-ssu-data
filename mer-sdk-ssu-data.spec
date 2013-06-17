@@ -16,8 +16,8 @@ ssu data for Mer SDK
 
 %files
 %defattr(-,root,root,-)
-%attr(0664, root, ssu) %config(noreplace) %{_sysconfdir}/ssu/ssu.ini
-%{_datadir}/ssu/*.ini
+%{_datadir}/ssu/board-mappings.d/05-sdk-vm.ini
+%{_datadir}/ssu/kickstart/part/sdk_vbox_vm
 
 %prep
 %setup -q -n src
@@ -26,5 +26,8 @@ ssu data for Mer SDK
 echo no build
 
 %install
-make DESTDIR=%{buildroot} install
+mkdir -p %{buildroot}/%{_datadir}/ssu/board-mappings.d
+mkdir -p %{buildroot}/%{_datadir}/ssu/kickstart/part
+install -D -m 644 05-sdk-vm.ini %{buildroot}/%{_datadir}/ssu/board-mappings.d/
+install -D -m 644 sdk_vbox_vm %{buildroot}/%{_datadir}/ssu/kickstart/part/
 
