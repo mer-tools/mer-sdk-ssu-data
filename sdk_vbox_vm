@@ -1,0 +1,1 @@
+part / --size 4096 --ondisk sda --fstype=ext4
